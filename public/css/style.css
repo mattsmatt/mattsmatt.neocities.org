@@ -3,7 +3,32 @@
    "how to change link color." */
 
 body {
-  background-color: white;
   color: black;
-  font-family: Verdana;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section {
+  width: 20%;
+}
+
+.right-section {
+  width: 80%;
+  overflow-y: auto;
+}
+
+.section {
+  border: 1px solid black;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  text-align: justify;
 }
