@@ -12,23 +12,32 @@ body {
   justify-content: center;
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
 .main-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .left-section {
-  width: 20%;
+  padding: 1em 2em;
+  background-color: rgb(195, 216, 14);
+  width: 15%;
 }
 
 .right-section {
-  width: 80%;
+  width: 85%;
+  background-color: rgb(7, 167, 143);
   overflow-y: auto;
 }
 
 .section {
-  border: 1px solid black;
-  padding: 1em 2em;
   box-sizing: border-box;
   text-align: justify;
 }
