@@ -1,22 +1,146 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("../assets/fonts/Helvetica.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Audio Nugget";
+  src: url("../assets/fonts/AudioNugget.ttf") format("truetype");
+}
+
 :root {
   --color-background-tint: rgba(0, 60, 255, 0.2);
 }
 
 body {
+  margin: 0;
+}
+
+.bg-image {
   background: linear-gradient(
       var(--color-background-tint),
       var(--color-background-tint)
     ),
     url("../assets/images/index/high-rise.webp");
+  filter: blur(4px);
   height: 100vh;
   width: 100vw;
-  margin: 0;
   background-size: cover;
   background-position: center;
+  position: absolute;
+}
+
+.content-container {
+  background-color: white;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 10vh;
+  left: 10vw;
+  width: 20vw;
+  z-index: 10;
 }
 
 .dot-container {
-  background: url("../assets/images/index/circle.webp") repeat;
-  width: 30%;
-  height: 30%;
+  background: url("../assets/images/index/larger-dots.webp") repeat;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  opacity: 5%;
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  margin: 0.5em 0;
+  width: 100vw;
+  height: 25vh;
+  z-index: 10;
+}
+
+.img-barcode,
+.text-sub-container,
+.text-main-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
+
+.letter {
+  display: inline-block; /* Allows individual transformation */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for movement and fade */
+  /* margin: 0 2px;  */
+}
+
+.text-container {
+  color: rgb(249, 249, 249);
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-sub-container {
+  background-color: #ff4d00;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.text-loading {
+  font-style: italic;
+  font-weight: 700;
+  font-size: x-large;
+}
+
+.text-main-container {
+  background-color: #0d98ba;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.text-main-container:hover .letter {
+  transform: translateY(-20px); /* Moves letter upwards */
+  opacity: 0; /* Fades letter out */
+}
+
+/* Optional: Add a slight delay to each letter for a staggered effect */
+.text-main-container:hover .letter:nth-child(1) {
+  transition-delay: 0s;
+}
+.text-main-container:hover .letter:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.text-main-container:hover .letter:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.text-main-container:hover .letter:nth-child(4) {
+  transition-delay: 0.15s;
+}
+.text-main-container:hover .letter:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.text-main-container:hover .letter:nth-child(6) {
+  transition-delay: 0.25s;
+}
+
+.text-sub-title {
+  font-size: small;
+  font-weight: 300;
+}
+
+.text-title {
+  font-family: "Audio Nugget", "Impact", sans-serif;
+  font-size: 48px;
+  display: flex; /* Arranges letters in a row */
+}
+
+.video-container {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 2em;
+  top: 2em;
+  z-index: 10;
+}
+
+.video-container img {
+  width: 100%;
+  height: 100%;
 }

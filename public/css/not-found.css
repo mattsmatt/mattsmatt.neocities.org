@@ -39,9 +39,9 @@ body {
 }
 
 h1 {
-  font-size: 10em;
+  font-size: 8em;
   color: var(--color-secondary);
-  -webkit-text-stroke: 0.1px var(--color-border);
+  -webkit-text-stroke: 1px var(--color-border);
   margin: 0;
 }
 
