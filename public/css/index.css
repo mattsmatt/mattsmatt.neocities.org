@@ -34,12 +34,18 @@ body {
   animation-iteration-count: infinite;
 }
 
+.arrow > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .arrow > div > svg {
   height: 15vh;
   width: auto;
   transform: rotate(90deg);
   transform-origin: center center;
-  opacity: 75%;
+  opacity: 50%;
+  filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.75));
 }
 
 .arrow-text {
@@ -48,6 +54,7 @@ body {
   font-size: 3vh;
   color: #f9f9f9;
   text-transform: lowercase;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
 .bg-image {
@@ -73,7 +80,7 @@ body {
   width: 20vw;
   z-index: 10;
   display: flex;
-  min-height: 50vh;
+  min-height: 40vh;
   align-items: stretch;
 }
 
@@ -84,7 +91,6 @@ body {
   position: absolute;
   box-sizing: border-box;
   bottom: 0;
-  margin: 0.5em 0;
   width: 100vw;
   height: 25vh;
   z-index: 10;
@@ -129,12 +135,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  font-size: 16px;
 }
 
 .text-loading {
   font-style: italic;
   font-weight: 700;
-  font-size: x-large;
+  font-size: 36px;
 }
 
 .text-main-container {
@@ -184,13 +191,13 @@ body {
 }
 
 .text-sub-title {
-  font-size: small;
+  font-size: 18px;
   font-weight: 300;
 }
 
 .text-title {
   font-family: "Audio Nugget", "Impact", sans-serif;
-  font-size: 7vh;
+  font-size: 48px;
   display: flex; /* Arranges letters in a row */
 }
 
