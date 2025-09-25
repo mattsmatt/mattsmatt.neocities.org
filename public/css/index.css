@@ -23,7 +23,7 @@ body {
 
 .arrow {
   position: absolute;
-  right: 2em;
+  right: 10vw;
   bottom: 20vh;
   display: flex;
   align-items: flex-end;
@@ -72,6 +72,9 @@ body {
   left: 10vw;
   width: 20vw;
   z-index: 10;
+  display: flex;
+  min-height: 50vh;
+  align-items: stretch;
 }
 
 .dot-container {
@@ -87,12 +90,20 @@ body {
   z-index: 10;
 }
 
-.img-barcode,
+.img-barcode {
+  box-sizing: border-box;
+  object-fit: contain;
+  padding: 20px;
+  background-color: white;
+  flex-grow: 1;
+}
+
 .text-sub-container,
 .text-main-container {
   box-sizing: border-box;
   width: 100%;
   padding: 20px;
+  flex: 1;
 }
 
 .letter {
