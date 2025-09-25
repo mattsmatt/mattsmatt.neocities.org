@@ -43,7 +43,7 @@ body {
 .dot-container {
   background: url("../assets/images/index/larger-dots.webp") repeat;
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  opacity: 5%;
+  opacity: 25%;
   position: absolute;
   box-sizing: border-box;
   bottom: 0;
@@ -93,31 +93,41 @@ body {
   flex-direction: column;
   gap: 0.5em;
   cursor: pointer;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.text-main-container:hover {
+  background-color: hsl(192, 84%, 75%);
+  color: rgb(20, 20, 20);
 }
 
 .text-main-container:hover .letter {
-  transform: translateY(-20px); /* Moves letter upwards */
-  opacity: 0; /* Fades letter out */
+  animation-name: letterAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 /* Optional: Add a slight delay to each letter for a staggered effect */
 .text-main-container:hover .letter:nth-child(1) {
-  transition-delay: 0s;
+  animation-delay: 0s;
 }
 .text-main-container:hover .letter:nth-child(2) {
-  transition-delay: 0.05s;
+  animation-delay: 0.05s;
 }
 .text-main-container:hover .letter:nth-child(3) {
-  transition-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 .text-main-container:hover .letter:nth-child(4) {
-  transition-delay: 0.15s;
+  animation-delay: 0.15s;
 }
 .text-main-container:hover .letter:nth-child(5) {
-  transition-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 .text-main-container:hover .letter:nth-child(6) {
-  transition-delay: 0.25s;
+  animation-delay: 0.25s;
 }
 
 .text-sub-title {
@@ -127,13 +137,13 @@ body {
 
 .text-title {
   font-family: "Audio Nugget", "Impact", sans-serif;
-  font-size: 48px;
+  font-size: 7vh;
   display: flex; /* Arranges letters in a row */
 }
 
 .video-container {
-  height: 100px;
-  width: 100px;
+  height: 10vh;
+  width: auto;
   position: absolute;
   left: 2em;
   top: 2em;
@@ -143,4 +153,19 @@ body {
 .video-container img {
   width: 100%;
   height: 100%;
+}
+
+@keyframes letterAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 }
