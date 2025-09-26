@@ -15,6 +15,11 @@
     />
   </head>
   <body>
+    <div class="black-overlay" id="loader-wrapper">
+      <img src="./assets/images/loading.gif" alt="" />
+      <div>Loading...</div>
+    </div>
+
     <div class="bg-image"></div>
     <div class="dot-container"></div>
     <div>
@@ -36,10 +41,7 @@
     </div>
     <div class="content-container">
       <div class="text-container">
-        <div
-          class="text-main-container"
-          onclick="window.location.href = './home.html'"
-        >
+        <div class="text-main-container" onclick="window.location.href = '#'">
           <div id="loadingText" class="text-loading"></div>
           <div class="text-title">
             <span class="letter">H</span>
