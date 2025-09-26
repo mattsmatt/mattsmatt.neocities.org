@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const loaderWrapper = document.getElementById("loader-wrapper");
-
-  setTimeout(() => {
-    // Add a class to hide the loader
-    loaderWrapper.classList.add("hidden");
-  }, 3000);
-
-  // Optionally, remove the loader from the DOM after the animation finishes
-  loaderWrapper.addEventListener("transitionend", function () {
-    loaderWrapper.remove();
-  });
-});
-
 function animateDots(elementId, maxDots, interval) {
   const element = document.getElementById(elementId);
   let dotCount = 0;
@@ -23,5 +9,24 @@ function animateDots(elementId, maxDots, interval) {
     // console.log(dotCount);
   }, interval);
 }
+
+function showLoading() {
+  const loaderWrapper = document.getElementById("loader-wrapper");
+  if (loaderWrapper.classList.contains("hidden")) {
+    loaderWrapper.classList.remove("hidden");
+  }
+
+  setTimeout(() => {
+    // Add a class to hide the loader
+    loaderWrapper.classList.add("hidden");
+  }, 3000);
+
+  // // Optionally, remove the loader from the DOM after the animation finishes
+  // loaderWrapper.addEventListener("transitionend", function () {
+  //   loaderWrapper.remove();
+  // });
+}
+
+document.addEventListener("DOMContentLoaded", showLoading());
 
 animateDots("loadingText", 3, 500);

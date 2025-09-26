@@ -54,6 +54,7 @@ body {
   font-size: 3vh;
   color: #f9f9f9;
   text-transform: lowercase;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
 .black-overlay {
@@ -148,6 +149,12 @@ body {
 .letter:last-child {
   font-family: "Helvetica", sans-serif;
   font-size: medium;
+}
+
+.index {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 .text-container {
