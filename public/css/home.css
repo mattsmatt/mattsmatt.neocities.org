@@ -1,4 +1,4 @@
-@keyframes moveLineHorizontal {
+@keyframes moveLineHorizontal-1 {
   0% {
     top: 0;
     transform: translateX(0);
@@ -9,13 +9,35 @@
   }
 }
 
-@keyframes moveLineVertical {
+@keyframes moveLineHorizontal-2 {
+  0% {
+    top: 5%;
+    transform: translateX(0);
+  }
+  100% {
+    top: 95%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveLineVertical-1 {
   0% {
     left: 0;
     transform: translateY(0);
   }
   100% {
     left: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveLineVertical-2 {
+  0% {
+    left: 5%;
+    transform: translateY(0);
+  }
+  100% {
+    left: 95%;
     transform: translateY(0);
   }
 }
@@ -146,21 +168,21 @@ body {
 .moving-line-h {
   height: 2px; /* Thickness of the line */
   width: 100%; /* Initial length of the line */
-  animation: moveLineHorizontal 5s ease-in-out infinite alternate;
+  animation: moveLineHorizontal-1 5s ease-in-out infinite alternate;
 }
 
-.moving-line-h:last-of-type {
-  animation-delay: 4s;
+.moving-line-h2 {
+  animation: moveLineHorizontal-2 5s ease-in-out infinite alternate;
 }
 
 .moving-line-v {
   width: 2px;
   height: 100%;
-  animation: moveLineVertical 5s ease-in-out infinite alternate;
+  animation: moveLineVertical-1 5s ease-in-out infinite alternate;
 }
 
-.moving-line-v:last-of-type {
-  animation-delay: 1s;
+.moving-line-v2 {
+  animation: moveLineVertical-2 5s ease-in-out infinite alternate;
 }
 
 .title {
