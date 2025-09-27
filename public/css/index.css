@@ -1,24 +1,9 @@
-@font-face {
-  font-family: "Helvetica";
-  src: url("../assets/fonts/Helvetica.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Audio Nugget";
-  src: url("../assets/fonts/AudioNugget.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Neuropol";
-  src: url("../assets/fonts/Neuropol.otf") format("opentype");
-}
-
 :root {
   --color-background-tint: rgba(0, 60, 255, 0.2);
 }
 
 body {
-  margin: 0;
+  overflow: hidden;
 }
 
 .arrow {
@@ -57,34 +42,6 @@ body {
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
-.black-overlay {
-  background-color: black;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  transition: opacity 0.5s ease-out; /* Smooth fade out */
-  z-index: 20;
-}
-
-.black-overlay div {
-  font-family: "Neuropol", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 5vh;
-  color: #f9f9f9;
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-  animation-name: loadingAnimation;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
-.black-overlay img {
-  height: 50%;
-}
-
 .bg-image {
   background: linear-gradient(
       var(--color-background-tint),
@@ -113,7 +70,7 @@ body {
 }
 
 .dot-container {
-  background: url("../assets/images/index/larger-dots.webp") repeat;
+  background: url("../assets/images/larger-dots.webp") repeat;
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   opacity: 25%;
   position: absolute;
@@ -249,21 +206,6 @@ body {
   height: 100%;
 }
 
-@keyframes loadingAnimation {
-  0% {
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-    opacity: 1;
-  }
-  50% {
-    text-shadow: none;
-    opacity: 0.5;
-  }
-  100% {
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-    opacity: 1;
-  }
-}
-
 @keyframes letterAnimation {
   0% {
     transform: translateY(0);
@@ -309,10 +251,4 @@ body {
   100% {
     transform: rotate(360deg);
   }
-}
-
-/* This class will be added by JavaScript */
-.hidden {
-  opacity: 0;
-  pointer-events: none; /* Prevent clicks after fading */
 }

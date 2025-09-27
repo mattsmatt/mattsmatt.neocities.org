@@ -8,6 +8,9 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="./css/index.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/body.css" />
+    <link rel="stylesheet" href="./css/loading.css" />
     <link
       rel="shortcut icon"
       href="./assets/images/icon.png"
@@ -16,7 +19,7 @@
   </head>
   <body>
     <div class="black-overlay" id="loader-wrapper">
-      <img src="./assets/images/loading.gif" alt="" />
+      <img src="./assets/images/loading/loading.gif" alt="" />
       <div>Loading...</div>
     </div>
 
@@ -42,7 +45,11 @@
       </div>
       <div class="content-container">
         <div class="text-container">
-          <div class="text-main-container" onclick="">
+          <div
+            class="text-main-container"
+            id="hoverArea"
+            onclick="redirect('./home.html')"
+          >
             <div id="loadingText" class="text-loading"></div>
             <div class="text-title">
               <span class="letter">H</span>

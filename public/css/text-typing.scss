@@ -1,0 +1,21 @@
+.code pre {
+  > pre {
+    overflow: hidden;
+    animation: typing 3.5s ease-in-out infinite;
+
+    @for $i from 1 through 10 {
+      :nth-child(#{$i}) {
+        animation-delay: $i * 3.5s;
+      }
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
