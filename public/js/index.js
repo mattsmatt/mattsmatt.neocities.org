@@ -19,7 +19,9 @@ function init() {
     loaderWrapper.classList.remove("hidden");
   }
 
-  hoverSound = new Audio("./assets/audio/onMouseEnter.mp3");
+  hoverSound = new Audio(
+    "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onMouseEnter.mp3"
+  );
 
   setTimeout(() => {
     // Add a class to hide the loader
