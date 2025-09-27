@@ -29,6 +29,24 @@
   }
 }
 
+@keyframes flash-1 {
+  from {
+    background-color: rgb(217, 217, 217, 0.4);
+  }
+  to {
+    background-color: #d5d5d5; /* Alternate flash color */
+  }
+}
+
+@keyframes flash-2 {
+  from {
+    background-color: rgba(164, 164, 164, 0.4);
+  }
+  to {
+    background-color: #d5d5d5; /* Alternate flash color */
+  }
+}
+
 body {
   overflow: hidden;
 }
@@ -36,7 +54,40 @@ body {
 .button-container {
   position: absolute;
   top: 25vh;
-  right: 25vw;
+  right: 15vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+}
+
+.btn {
+  padding: 2em;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgb(217, 217, 217, 0.4);
+  filter: drop-shadow(4px 4px 2px #686868);
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #171717;
+  font-family: "Neuropol", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn:hover {
+  animation: flash-1 0.2s infinite alternate; /* Apply flash animation */
+}
+
+.btn:nth-child(1),
+.btn:nth-child(4),
+.btn:nth-child(5) {
+  background-color: rgba(164, 164, 164, 0.4);
+}
+
+.btn:nth-child(1):hover,
+.btn:nth-child(4):hover,
+.btn:nth-child(5):hover {
+  animation: flash-2 0.3s infinite alternate; /* Apply flash animation */
 }
 
 .code {
