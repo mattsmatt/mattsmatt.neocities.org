@@ -1,0 +1,121 @@
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(-20px) translateY(20px) rotate(-90deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0) translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0) translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(20px) translateY(-20px) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-20px) translateY(20px) rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+:root {
+  --jasmine: #f7d374ff;
+  --melon: #f3abacff;
+  --baby-powder: #f7f9f6ff;
+  --cambridge-blue: rgb(148, 178, 172);
+  --lapis-lazuli: #34689aff;
+  --air-superiority-blue: #6ba3c8ff;
+}
+
+body {
+  overflow: hidden;
+}
+
+.arrow {
+  animation-name: arrowAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.bg-image {
+  background: url("../assets/images/moodboard/background.jpg");
+  /* filter: blur(4px); */
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.dot-container {
+  background: url("../assets/images/larger-dots.webp") repeat;
+  opacity: 0.25;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30vh;
+  z-index: 10;
+}
+
+.dot-container-top {
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  top: 0;
+  left: 0;
+}
+
+.dot-container-bottom {
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+
+  bottom: 0;
+  right: 0;
+}
+
+.title {
+  background: none;
+  color: #171717;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title > svg > path {
+  fill: #171717;
+}
+
+.video-container {
+  width: auto;
+  position: absolute;
+  z-index: 10;
+}
+
+.video-container-top {
+  height: 40vh;
+  left: -50px;
+  top: -150px;
+}
+
+.video-container-top img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
