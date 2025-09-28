@@ -165,6 +165,7 @@ body {
 }
 
 .btn:hover {
+  cursor: pointer;
   animation: flash-1 0.2s ease-in-out infinite alternate; /* Apply flash animation */
 }
 
@@ -251,41 +252,6 @@ body {
 
 .moving-line-v2 {
   animation: moveLineVertical-2 5s ease-in-out infinite alternate;
-}
-
-.title {
-  background: linear-gradient(
-    to bottom right,
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.01),
-    rgba(0, 0, 0, 0)
-  );
-  font-family: "Neuropol", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 5vh;
-  color: #f9f9f9;
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
-  position: absolute;
-  padding-top: 1em;
-  padding-left: 1em;
-  width: 40vw;
-  height: 30vh;
-  display: flex;
-  gap: 0.3em;
-}
-
-.title span:nth-child(1) {
-  color: orange;
-  font-size: 6vh;
-}
-
-.title > svg {
-  height: 8vh;
-  width: auto;
-  transform: rotate(-90deg);
-}
-
-.title > svg > path {
-  fill: #f9f9f9;
 }
 
 .video-container {

@@ -13,6 +13,7 @@ function init() {
   setTimeout(() => {
     // Add a class to hide the loader
     loaderWrapper.classList.add("hidden");
+    playOnFinishLoadingAudio();
   }, 3000);
 
   // // Optionally, remove the loader from the DOM after the animation finishes
@@ -33,6 +34,23 @@ function redirect(destination) {
   setTimeout(() => {
     window.location.href = destination;
   }, 3000);
+}
+
+function playOnFinishLoadingAudio() {
+  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  var source = audioCtx.createBufferSource();
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "./assets/audio/onFinishLoading.mp3");
+  xhr.responseType = "arraybuffer";
+  xhr.addEventListener("load", function (r) {
+    audioCtx.decodeAudioData(xhr.response, function (buffer) {
+      source.buffer = buffer;
+      source.connect(audioCtx.destination);
+      source.loop = false;
+    });
+    source.start(0);
+  });
+  xhr.send();
 }
 
 window.addEventListener("pageshow", function (e) {

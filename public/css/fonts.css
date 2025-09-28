@@ -12,3 +12,8 @@
   font-family: "Neuropol";
   src: url("../assets/fonts/Neuropol.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "Ratkeys PC 3D W95 Regular";
+  src: url("./assets/fonts/Ratkeys PC 3D W95 Regular.ttf") format("truetype");
+}

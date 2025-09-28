@@ -1,0 +1,164 @@
+:root {
+  --jasmine: #f7d374ff;
+  --melon: #f3abacff;
+  --baby-powder: #f7f9f6ff;
+  --cambridge-blue: rgb(148, 178, 172);
+  --lapis-lazuli: #34689aff;
+  --air-superiority-blue: #6ba3c8ff;
+}
+
+@keyframes run {
+  from {
+    transform: translateY(0%);
+  }
+  /* Magic is here. This is the width of the elem with text after rendering the page */
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+body {
+  background-color: var(--air-superiority-blue);
+}
+
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background: var(--lapis-lazuli);
+  border-style: solid;
+  border-color: var(--jasmine);
+  border-width: 10px 10px 10px 0;
+  padding: 25px;
+  border-radius: 0 40px 40px 0;
+}
+
+.dot-container {
+  background: url("../assets/images/larger-dots.webp") repeat;
+  opacity: 0.25;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30vh;
+  z-index: 10;
+}
+
+.dot-container-top {
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  top: 0;
+  left: 0;
+}
+
+.dot-container-bottom {
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  bottom: 0;
+  left: 0;
+}
+
+.text-container {
+  color: #ebebeb;
+  margin-left: 50px;
+  width: calc(80% - 400px - 20px * 2);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  display: flex;
+  text-shadow: 1px 1px 2px rgba(33, 33, 33, 0.5);
+}
+
+.text-main {
+  border-radius: 40px 0 0 40px;
+  background: var(--lapis-lazuli);
+  border: 10px solid var(--jasmine);
+  padding: 25px;
+}
+
+.text-main-header {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-weight: 500;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
+}
+
+.text-container svg:nth-of-type(1) circle {
+  fill: var(--jasmine);
+}
+
+.text-container svg:nth-of-type(2) circle {
+  fill: var(--melon);
+}
+
+.text-container svg:nth-of-type(3) circle {
+  fill: var(--cambridge-blue);
+}
+
+.tint {
+  position: relative;
+  float: left;
+}
+
+.tint:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(66, 41, 252, 0.6);
+}
+
+.title {
+  background: none;
+  color: #171717;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title > svg > path {
+  fill: #171717;
+}
+
+.running-line-wrapper {
+  margin: auto;
+  height: 100%;
+  width: 400px;
+  background: black;
+  padding: 0 20px;
+  right: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: 15;
+}
+
+.running-line {
+  animation: run 7.5s linear infinite;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  will-change: transform;
+}
+
+.running-line img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.running-line figure {
+  margin: 0;
+}
