@@ -40,7 +40,10 @@ function playOnFinishLoadingAudio() {
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   var source = audioCtx.createBufferSource();
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "./assets/audio/onFinishLoading.mp3");
+  xhr.open(
+    "GET",
+    "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onFinishLoading.mp3"
+  );
   xhr.responseType = "arraybuffer";
   xhr.addEventListener("load", function (r) {
     audioCtx.decodeAudioData(xhr.response, function (buffer) {
