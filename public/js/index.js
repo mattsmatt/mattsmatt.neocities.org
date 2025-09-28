@@ -48,11 +48,8 @@ function redirect(destination) {
   }, 3000);
 }
 
-window.addEventListener("popstate", function (e) {
-  var state = e.state;
-  if (state !== null) {
-    init();
-  }
+window.addEventListener("pageshow", function (e) {
+  init();
 });
 
 animateDots("loadingText", 3, 500);
