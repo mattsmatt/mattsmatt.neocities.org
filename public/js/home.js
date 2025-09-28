@@ -35,4 +35,4 @@ function redirect(destination) {
   }, 3000);
 }
 
-document.addEventListener("DOMContentLoaded", init());
+window.addEventListener("popstate", init());
