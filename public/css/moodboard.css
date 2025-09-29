@@ -28,9 +28,10 @@
   --cambridge-blue: rgb(148, 178, 172);
   --lapis-lazuli: #34689aff;
   --air-superiority-blue: #6ba3c8ff;
+  --shadow-color: rgba(216, 191, 216, 0.418);
 
   --grid-gap: 15px;
-  --content-height: 400px;
+  --content-width: 800px;
 }
 
 body {
@@ -87,18 +88,49 @@ body {
   right: 0;
 }
 
-.moodboard {
+.img-cube {
+  z-index: 15;
   position: absolute;
-  margin: 0 var(--grid-gap);
-  overflow: auto;
-  scrollbar-width: thin;
-  width: calc(100% - var(--grid-gap) * 2);
-  white-space: nowrap;
+  padding-left: 50px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 15;
-  max-height: calc(400px + var(--grid-gap) * 2);
+  width: 25vw;
+}
+
+.img-cube img {
+  width: 100%;
+  height: auto;
+}
+
+.moodboard {
+  margin: var(--grid-gap);
+  scrollbar-width: thin;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
   object-fit: cover;
+  white-space: nowrap;
+  height: calc(100vh - var(--grid-gap) * 2);
+  gap: calc(var(--grid-gap));
+  padding: 0 var(--grid-gap);
+}
+
+.moodboard-container {
+  max-width: 800px;
+  position: absolute;
+  right: 0;
+  z-index: 15;
+}
+
+.moodboard img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.moodboard > *:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 2px var(--shadow-color);
 }
 
 .title {
