@@ -1,8 +1,13 @@
 const rippleContainer = document.querySelector(".ripple-container");
 
 function createRandomRipple() {
-  const ripple = document.createElement("div");
-  ripple.classList.add("ripple");
+  const ripple1 = document.createElement("div");
+  const ripple2 = document.createElement("div");
+  const ripple3 = document.createElement("div");
+
+  ripple1.classList.add("ripple");
+  ripple2.classList.add("ripple");
+  ripple3.classList.add("ripple");
 
   // Random position within the container
   const containerWidth = rippleContainer.offsetWidth;
@@ -11,18 +16,38 @@ function createRandomRipple() {
   const randomY = Math.random() * containerHeight;
 
   // Random size for the ripple
-  const randomSize = Math.random() * 100 + 50; // Between 50px and 150px
+  var randomSize = Math.random() * 125 + 25; // Between 25px and 150px
 
-  ripple.style.left = `${randomX - randomSize / 2}px`;
-  ripple.style.top = `${randomY - randomSize / 2}px`;
-  ripple.style.width = `${randomSize}px`;
-  ripple.style.height = `${randomSize}px`;
+  ripple1.style.left = `${randomX - randomSize / 2}px`;
+  ripple1.style.top = `${randomY - randomSize / 2}px`;
+  ripple1.style.width = `${randomSize}px`;
+  ripple1.style.height = `${randomSize}px`;
 
-  rippleContainer.appendChild(ripple);
+  randomSize += 30;
+  ripple2.style.left = `${randomX - randomSize / 2}px`;
+  ripple2.style.top = `${randomY - randomSize / 2}px`;
+  ripple2.style.width = `${randomSize}px`;
+  ripple2.style.height = `${randomSize}px`;
+
+  randomSize += 30;
+  ripple3.style.left = `${randomX - randomSize / 2}px`;
+  ripple3.style.top = `${randomY - randomSize / 2}px`;
+  ripple3.style.width = `${randomSize}px`;
+  ripple3.style.height = `${randomSize}px`;
+
+  rippleContainer.appendChild(ripple1);
+  rippleContainer.appendChild(ripple2);
+  rippleContainer.appendChild(ripple3);
 
   // Remove the ripple after the animation ends
-  ripple.addEventListener("animationend", () => {
-    ripple.remove();
+  ripple1.addEventListener("animationend", () => {
+    ripple1.remove();
+  });
+  ripple2.addEventListener("animationend", () => {
+    ripple2.remove();
+  });
+  ripple3.addEventListener("animationend", () => {
+    ripple3.remove();
   });
 }
 

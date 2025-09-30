@@ -1,11 +1,11 @@
 const images = [
-  { id: 1, img: "Black_colour.jpg" },
-  { id: 2, img: "Black_colour.jpg" },
-  { id: 3, img: "Black_colour.jpg" },
-  { id: 4, img: "Black_colour.jpg" },
-  { id: 5, img: "Black_colour.jpg" },
-  { id: 6, img: "Black_colour.jpg" },
-  { id: 7, img: "Black_colour.jpg" },
+  { id: 1, img: "chiikawa.png" },
+  { id: 2, img: "susie-deltarune.gif" },
+  { id: 3, img: "the-mission.png" },
+  { id: 4, img: "tatami-galaxy.png" },
+  { id: 5, img: "azumanga-daioh.jpg" },
+  { id: 6, img: "resurrection.jpg" },
+  { id: 7, img: "hollow-knight.jpg" },
 ];
 
 images.forEach((item) => {

@@ -57,7 +57,7 @@ body {
 
 .dot-container-top {
   mask-image: linear-gradient(
-    to bottom,
+    to bottom right,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0)
@@ -68,7 +68,7 @@ body {
 
 .dot-container-bottom {
   mask-image: linear-gradient(
-    to top,
+    to top right,
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0)
@@ -101,7 +101,7 @@ body {
 }
 
 .moodboard-container {
-  max-width: 800px;
+  max-width: 1000px;
   overflow: auto;
   scrollbar-color: black transparent;
   height: calc(100vh);
