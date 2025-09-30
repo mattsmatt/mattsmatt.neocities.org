@@ -1,0 +1,76 @@
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(-20px) translateY(20px) rotate(-90deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0) translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0) translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(20px) translateY(-20px) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-20px) translateY(20px) rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2); /* Adjust scale for desired ripple size */
+    opacity: 0;
+  }
+}
+
+:root {
+  --salmon-pink: #eb8f96ff;
+}
+
+.arrow {
+  animation-name: arrowAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(-2px -2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.dot-container {
+  background: url("../assets/images/larger-dots.webp") repeat;
+  opacity: 0.05;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.ripple-container {
+  position: absolute;
+  background-color: var(--salmon-pink);
+  width: 100%;
+  height: 100vh; /* Adjust as needed */
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent ripple color */
+  animation: ripple-animation 1.5s ease-out forwards;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+.title {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
