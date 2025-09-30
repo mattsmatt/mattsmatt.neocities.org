@@ -45,22 +45,12 @@ body {
   animation-iteration-count: infinite;
 }
 
-.bg-image {
-  background: url("../assets/images/moodboard/background.jpg");
-  /* filter: blur(4px); */
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-}
-
 .dot-container {
   background: url("../assets/images/larger-dots.webp") repeat;
   opacity: 0.25;
   position: absolute;
   box-sizing: border-box;
-  width: 100%;
+  width: 35%;
   height: 30vh;
   z-index: 10;
 }
@@ -84,8 +74,8 @@ body {
     rgba(0, 0, 0, 0)
   );
 
+  left: 0;
   bottom: 0;
-  right: 0;
 }
 
 .img-cube {
@@ -102,45 +92,50 @@ body {
   height: auto;
 }
 
-.moodboard {
-  margin: var(--grid-gap);
-  scrollbar-width: thin;
-  overflow: auto;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  object-fit: cover;
-  white-space: nowrap;
-  height: calc(100vh - var(--grid-gap) * 2);
+.moodboard-col {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  scroll-snap-align: start;
   gap: calc(var(--grid-gap));
-  padding: 0 var(--grid-gap);
 }
 
 .moodboard-container {
   max-width: 800px;
+  overflow: auto;
+  scrollbar-color: black transparent;
+  height: calc(100vh);
+  scrollbar-width: thin;
+  padding: 0 var(--grid-gap);
   position: absolute;
   right: 0;
   z-index: 15;
 }
 
-.moodboard img {
+.moodboard-col-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.moodboard-col img {
   width: 100%;
   height: auto;
   border-radius: 20px;
 }
 
-.moodboard > *:hover {
+.moodboard-col > *:hover {
   transform: scale(1.03);
   box-shadow: 5px 5px 2px var(--shadow-color);
 }
 
-.title {
-  background: none;
-  color: #171717;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.spacer {
+  height: var(--grid-gap);
+  width: 100%;
 }
 
-.title > svg > path {
-  fill: #171717;
+.title {
+  background: none;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .video-container {
@@ -167,12 +162,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    93,
-    253,
-    0.262
-  ); /* Semi-transparent background for the filter effect */
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    rgba(0, 93, 253, 0.262); /* Semi-transparent background for the filter effect */
   backdrop-filter: grayscale(20%); /* Apply desired filters */
   z-index: 0; /* Place overlay between video and content */
 }
