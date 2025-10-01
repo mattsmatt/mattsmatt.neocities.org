@@ -6,6 +6,7 @@ function createRandomRipple() {
   const ripple3 = document.createElement("div");
 
   ripple1.classList.add("ripple");
+  ripple1.classList.add("ripple-center");
   ripple2.classList.add("ripple");
   ripple3.classList.add("ripple");
 
