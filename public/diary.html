@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HELIOS | MOODBOARD</title>
+    <title>HELIOS | DIARY</title>
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/body.css" />
     <link rel="stylesheet" href="./css/loading.css" />
-    <link rel="stylesheet" href="./css/moodboard.css" />
+    <link rel="stylesheet" href="./css/diary.css" />
     <link
       rel="shortcut icon"
       href="./assets/images/icon.png"
@@ -22,24 +22,15 @@
       <img src="./assets/images/loading/loading.gif" alt="" />
       <div>Loading...</div>
     </div>
-    <video loop autoplay muted id="myVideo">
-      <source
-        src="https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/video/moodboard/skies.mp4"
-        type="video/mp4"
-      />
-    </video>
-    <div class="video-overlay"></div>
-    <div class="dot-container dot-container-top"></div>
-    <div class="dot-container dot-container-bottom"></div>
+
     <div class="title">
-      <div><span>M</span><span>OODBOARD</span></div>
+      <div>diary</div>
       <svg
         width="800px"
         height="800px"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="arrow"
       >
         <path
           d="M15.3787 13.7786L15.3598 6.30886L17.6283 6.31457L17.6569 17.6569L6.31459 17.6283L6.30887 15.3598L13.7787 15.3786L5.54316 7.14314L7.14316 5.54314L15.3787 13.7786Z"
@@ -47,28 +38,19 @@
         />
       </svg>
     </div>
-    <div class="img-cube">
-      <img src="./assets/images/moodboard/cube.gif" alt="" />
-    </div>
-    <div class="video-container video-container-top">
-      <img src="./assets/images/index/spinning.gif" />
-    </div>
-    <div class="moodboard-container">
-      <div class="spacer"></div>
-      <div class="moodboard-col-container" id="moodboard">
-        <div class="moodboard-col"></div>
-        <div class="moodboard-col"></div>
-        <div class="moodboard-col"></div>
-      </div>
-      <div class="spacer"></div>
-    </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <span class="close">×</span>
-      <img class="modal-content" id="img01" />
-      <!-- <div id="caption"></div> -->
+    <div class="ripple-container"></div>
+
+    <div class="circle-container">
+      <svg width="50" height="50">
+        <circle cx="25" cy="25" r="25" fill="blue" />
+      </svg>
+      <svg width="50" height="50">
+        <circle cx="25" cy="25" r="25" fill="blue" />
+      </svg>
+      <svg width="50" height="50">
+        <circle cx="25" cy="25" r="25" fill="blue" />
+      </svg>
     </div>
   </body>
   <script src="./js/loading.js"></script>
-  <script src="./js/moodboard.js"></script>
 </html>

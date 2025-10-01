@@ -17,3 +17,8 @@
   font-family: "Tactic Sans Bold";
   src: url("../assets/fonts/tactic-sans-bold.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Flux Demo";
+  src: url("../assets/fonts/FluxDemo.ttf") format("truetype");
+}

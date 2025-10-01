@@ -21,6 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 0;
   position: absolute;
   transition: opacity 0.5s ease-out; /* Smooth fade out */
   z-index: 20;

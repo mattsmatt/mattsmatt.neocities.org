@@ -52,5 +52,33 @@ function createRandomRipple() {
   });
 }
 
+function changeFrame(destination) {
+  const frame = document.getElementById("frame");
+
+  const onFinishLoading = new Audio(
+    "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onFinishLoading.mp3"
+  );
+
+  const onClick = new Audio(
+    "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onClick.mp3"
+  );
+
+  onClick.play();
+
+  if (destination === "film") {
+    frame.setAttribute("src", "./film.html");
+  } else if (destination == "music") {
+    frame.setAttribute("src", "./music.html");
+  } else if (destination == "games") {
+    frame.setAttribute("src", "./games.html");
+  } else {
+    frame.setAttribute("src", "./library-empty.html");
+  }
+
+  setTimeout(() => {
+    onFinishLoading.play();
+  }, 4000);
+}
+
 // Create a new ripple every second (adjust interval as needed)
 setInterval(createRandomRipple, 1000);

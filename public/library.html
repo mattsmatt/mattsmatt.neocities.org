@@ -28,9 +28,21 @@
     <div class="dot-container dot-container-bottom"></div>
     <div class="title">
       <div>library</div>
+      <svg
+        width="800px"
+        height="800px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.3787 13.7786L15.3598 6.30886L17.6283 6.31457L17.6569 17.6569L6.31459 17.6283L6.30887 15.3598L13.7787 15.3786L5.54316 7.14314L7.14316 5.54314L15.3787 13.7786Z"
+          fill="#000000"
+        />
+      </svg>
     </div>
     <div class="btn-container">
-      <div class="btn">
+      <div class="btn" onclick="changeFrame('music')">
         <div class="btn-outside">
           <div class="btn-inside">
             <div>
@@ -49,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div class="btn">
+      <div class="btn" onclick="changeFrame('film')">
         <div class="btn-outside">
           <div class="btn-inside">
             <div>
@@ -69,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="btn">
+      <div class="btn" onclick="changeFrame('games')">
         <div class="btn-outside">
           <div class="btn-inside">
             <div>
@@ -92,7 +104,11 @@
     <div class="iframe-container-outside">
       <div class="iframe-container-inside-1">
         <div class="iframe-container-inside-2">
-          <iframe src="./decoy.html" frameborder="0"></iframe>
+          <iframe
+            src="./library-empty.html"
+            frameborder="0"
+            id="frame"
+          ></iframe>
         </div>
       </div>
     </div>

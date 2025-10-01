@@ -22,3 +22,30 @@ images.forEach((item) => {
     flexContainers[2].appendChild(img);
   }
 });
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Get all images and insert the clicked image inside the modal
+// Get the content of the image description and insert it inside the modal image caption
+var moodboard = document.getElementById("moodboard");
+var moodboardImg = moodboard.getElementsByTagName("img");
+var modalImg = document.getElementById("img01");
+// var captionText = document.getElementById("caption");
+var i;
+for (i = 0; i < moodboardImg.length; i++) {
+  moodboardImg[i].onclick = function () {
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+    // captionText.innerHTML = this.nextElementSibling.innerHTML;
+  };
+}

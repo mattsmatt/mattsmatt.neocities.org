@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <style>
+      @keyframes animateText {
+        0% {
+          font-size: 48px;
+        }
+
+        100% {
+          font-size: 54px;
+        }
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        height: 300px;
+        position: relative;
+      }
+
+      .text {
+        font-family: "Flux Demo", sans-serif;
+        font-size: 48px;
+        position: absolute;
+        color: white;
+        -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+        text-shadow: 1px 1px 0 #919191,
+          /* First shadow layer (darker than main text) */ 1.5px 1.5px 0 #919191,
+          2px 2px 0 #919191, 2.5px 2.5px 0 #919191, 3px 3px 0 #919191,
+          /* ... add more layers for more depth ... */ 6px 6px 0 #919191,
+          7px 7px 4px rgba(0, 0, 0, 0.4); /* Final, softer shadow for overall depth */
+        top: 50%;
+        transform: translateY(-50%);
+        animation: animateText 1.5s ease-in-out infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./assets/images/library/heart.gif" alt="" />
+    <div class="text">Select Page</div>
+  </body>
+</html>
