@@ -101,7 +101,7 @@ body {
 }
 
 .moodboard-container {
-  max-width: 1000px;
+  width: 60%;
   overflow: auto;
   scrollbar-color: black transparent;
   height: calc(100vh);

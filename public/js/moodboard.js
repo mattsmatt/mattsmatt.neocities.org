@@ -3,8 +3,8 @@ const images = [
   { id: 2, img: "susie-deltarune.gif" },
   { id: 3, img: "the-mission.png" },
   { id: 4, img: "tatami-galaxy.png" },
-  { id: 5, img: "azumanga-daioh.jpg" },
-  { id: 6, img: "resurrection.jpg" },
+  { id: 5, img: "resurrection.jpg" },
+  { id: 6, img: "azumanga-daioh.jpg" },
   { id: 7, img: "hollow-knight.jpg" },
 ];
 

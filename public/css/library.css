@@ -40,6 +40,15 @@
   --aqua: #28fffeff;
 }
 
+body {
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .arrow {
   animation-name: arrowAnimation;
   animation-duration: 3s;
@@ -70,8 +79,18 @@
 
 .btn-inside {
   background-color: var(--phthalo-blue);
-  padding: 10px 50px 10px 10px;
+  padding: 10px;
   border-radius: 30px;
+}
+
+.btn-inside > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.btn-inside > div > svg {
+  padding-left: 20px;
+  fill: var(--gold);
 }
 
 .btn-container {
@@ -97,6 +116,40 @@
   width: 100%;
   height: 100%;
   z-index: 10;
+}
+
+.iframe-container-outside {
+  background-color: var(--aqua);
+  width: 70%;
+  height: calc(100vh - 75px);
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 7.5px;
+  padding-bottom: 0;
+  border-radius: 40px 40px 0 0;
+  box-sizing: border-box;
+  z-index: 15;
+}
+
+.iframe-container-inside-1 {
+  background-color: var(--blue-ncs);
+  padding: 7.5px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 32.5px 32.5px 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+.iframe-container-inside-2 {
+  border: 15px solid var(--phthalo-blue);
+  border-bottom: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
+  background-color: rgb(228, 228, 228);
 }
 
 .ripple-center {
