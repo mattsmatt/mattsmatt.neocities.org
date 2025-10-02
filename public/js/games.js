@@ -1,62 +1,67 @@
-const music = [
+const games = [
   {
     title: "Katana Zero",
     year: 2019,
-    image: "co1isp.jpeg",
-  },
-  {
-    title: "Portal",
-    year: 2007,
-    image: "co1x7d.jpeg",
+    image: "katana-zero.webp",
   },
   {
     title: "Spelunky 2",
     year: 2020,
-    image: "co2f66.jpeg",
+    image: "spelunky-2.webp",
   },
   {
     title: "Neon White",
     year: 2022,
-    image: "co2tgh.jpeg",
-  },
-  {
-    title: "Celeste",
-    year: 2018,
-    image: "co3byy.jpeg",
-  },
-  {
-    title: "Vib-Ribbon",
-    year: 1999,
-    image: "co6xgh.jpeg",
+    image: "neon-white.webp",
   },
   {
     title: "Pizza Tower",
     year: 2023,
-    image: "co5uu1.jpeg",
+    image: "pizza-tower.webp",
   },
   {
     title: "Undertale",
     year: 2015,
-    image: "co2855.jpeg",
+    image: "undertale.webp",
   },
   {
     title: "Um Jammer Lammy",
     year: 2018,
-    image: "coa4lg.jpeg",
+    image: "um-jammer-lammy.webp",
   },
   {
     title: "Shovel Knight",
     year: 2014,
-    image: "co6pup.jpg",
+    image: "shovel-knight.webp",
+  },
+  {
+    title: "Hollow Knight",
+    year: 2017,
+    image: "hollow-knight.webp",
+  },
+  {
+    title: "Deltarune",
+    year: 2025,
+    image: "deltarune.webp",
+  },
+  {
+    title: "DanceDanceRevolution EXTREME",
+    year: 2002,
+    image: "ddr-extreme.webp",
+  },
+  {
+    title: "Life Is Strange",
+    year: 2015,
+    image: "life-is-strange.webp",
   },
 ];
 
-music.forEach((item) => {
+games.forEach((item) => {
   const gameDiv = document.createElement("div");
   gameDiv.className = "item";
 
   const poster = document.createElement("img");
-  poster.src = "./assets/images/games/" + item["image"];
+  poster.src = "./assets/images/library/games/" + item["image"];
   gameDiv.appendChild(poster);
 
   const title = document.createElement("div");
