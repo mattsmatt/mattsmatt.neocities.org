@@ -1,4 +1,5 @@
 const rippleContainer = document.querySelector(".ripple-container");
+let timeoutId;
 
 function createRandomRipple() {
   const ripple1 = document.createElement("div");
@@ -52,7 +53,19 @@ function createRandomRipple() {
   });
 }
 
-function changeFrame(destination) {
+function cancelTimedAction() {
+  if (timeoutId) {
+    // Check if a timeout is currently active
+    clearTimeout(timeoutId);
+    console.log("Timed action cancelled. Timeout ID:", timeoutId);
+    timeoutId = null; // Reset the ID after clearing
+  } else {
+    console.log("No active timed action to cancel.");
+  }
+}
+
+function changeFrame(destination, event) {
+  cancelTimedAction();
   const frame = document.getElementById("frame");
 
   const onFinishLoading = new Audio(
@@ -65,19 +78,27 @@ function changeFrame(destination) {
 
   onClick.play();
 
-  if (destination === "film") {
-    frame.setAttribute("src", "./film.html");
-  } else if (destination == "music") {
-    frame.setAttribute("src", "./music.html");
-  } else if (destination == "games") {
-    frame.setAttribute("src", "./games.html");
-  } else {
-    frame.setAttribute("src", "./library-empty.html");
+  const activeBtn = document.getElementsByClassName("btn-active");
+
+  if (activeBtn.length != 0) {
+    activeBtn[0].classList.remove("btn-active");
   }
 
-  setTimeout(() => {
+  if (destination === "film") {
+    frame.contentWindow.location.replace("./film.html");
+  } else if (destination == "music") {
+    frame.contentWindow.location.replace("./music.html");
+  } else if (destination == "games") {
+    frame.contentWindow.location.replace("./games.html");
+  } else {
+    frame.contentWindow.location.replace("./library-empty.html");
+  }
+
+  event.currentTarget.classList.add("btn-active");
+
+  timeoutId = setTimeout(() => {
     onFinishLoading.play();
-  }, 4000);
+  }, 3500);
 }
 
 // Create a new ripple every second (adjust interval as needed)

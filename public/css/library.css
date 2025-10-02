@@ -26,6 +26,11 @@ iframe {
   height: 100%;
 }
 
+.btn-active {
+  transform: translateX(0px) !important;
+  cursor: none;
+}
+
 .btn:hover {
   transform: translateX(0px);
   cursor: pointer;

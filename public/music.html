@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="library-content">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,80 +7,32 @@
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/body.css" />
     <link rel="stylesheet" href="./css/loading.css" />
+    <link rel="stylesheet" href="./css/library-content.css" />
+    <style>
+      #music-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 20px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      #music-container img {
+        width: 80%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+      }
+    </style>
   </head>
   <body>
     <div class="black-overlay" id="loader-wrapper">
       <img src="./assets/images/loading/loading.gif" alt="" />
       <div>Loading...</div>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur debitis,
-      itaque voluptates recusandae illo veniam dolore libero quis ab deleniti,
-      velit fuga magni ut ipsam exercitationem, quam eum quod sed. Magni illum
-      impedit sit minus nam quisquam blanditiis omnis molestias expedita,
-      molestiae ut ducimus eligendi numquam earum nobis laboriosam eos
-      voluptates aliquam! Fuga quod quam sapiente officia deserunt ut ipsum.
-      Vero saepe aspernatur cumque labore quam soluta deleniti incidunt error
-      animi facere, ducimus vel omnis quis quasi magnam tempore asperiores
-      molestiae alias cupiditate veritatis officia dolor voluptatem. Repellat,
-      natus dolor! Modi, perspiciatis optio? Nobis hic, consequatur esse tempore
-      voluptatum earum amet culpa non totam rerum adipisci molestias cum
-      voluptate. Repudiandae quasi, enim ratione commodi sunt recusandae fugit!
-      Illum, reprehenderit suscipit. Tempora nihil sunt ipsa laudantium libero
-      beatae quaerat sed fugiat deserunt, dolorum excepturi, ut labore nostrum
-      doloribus dolore ea a. Beatae, quaerat rem? Libero tenetur maiores
-      molestias voluptatum hic odit! Repellat cupiditate ea aliquid aperiam
-      laborum, quia dolorum pariatur et? Perspiciatis temporibus fugit culpa a
-      iusto veniam eos? Libero voluptas alias earum nemo, ipsam expedita quia
-      consequuntur suscipit quidem eligendi! Quo dolorem unde repudiandae id
-      voluptates sapiente non officiis ab officia, corporis voluptatum iure
-      aspernatur, maxime nostrum. Impedit officiis quo omnis optio quae corrupti
-      necessitatibus vero neque alias voluptates. Porro. Doloribus ipsum nam
-      eum, nesciunt possimus et facilis laboriosam officia necessitatibus neque,
-      pariatur laudantium, illum temporibus? Quam nobis provident aliquam ad
-      dolorum commodi, et rem repudiandae, voluptate porro error sint! Dolores
-      incidunt facilis quis temporibus pariatur aliquam distinctio totam
-      doloremque quaerat, vitae eum consequatur vero sed adipisci facere ut.
-      Nam, corporis? At cupiditate magni alias provident! Maxime quibusdam unde
-      quisquam! Totam consequuntur quaerat repellendus vitae nulla! Obcaecati
-      eius magnam nesciunt repellendus esse, aliquid accusamus odit velit
-      incidunt porro similique corporis voluptates minima molestiae! Alias,
-      molestias vel. Laboriosam nostrum tempore nemo.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur debitis,
-      itaque voluptates recusandae illo veniam dolore libero quis ab deleniti,
-      velit fuga magni ut ipsam exercitationem, quam eum quod sed. Magni illum
-      impedit sit minus nam quisquam blanditiis omnis molestias expedita,
-      molestiae ut ducimus eligendi numquam earum nobis laboriosam eos
-      voluptates aliquam! Fuga quod quam sapiente officia deserunt ut ipsum.
-      Vero saepe aspernatur cumque labore quam soluta deleniti incidunt error
-      animi facere, ducimus vel omnis quis quasi magnam tempore asperiores
-      molestiae alias cupiditate veritatis officia dolor voluptatem. Repellat,
-      natus dolor! Modi, perspiciatis optio? Nobis hic, consequatur esse tempore
-      voluptatum earum amet culpa non totam rerum adipisci molestias cum
-      voluptate. Repudiandae quasi, enim ratione commodi sunt recusandae fugit!
-      Illum, reprehenderit suscipit. Tempora nihil sunt ipsa laudantium libero
-      beatae quaerat sed fugiat deserunt, dolorum excepturi, ut labore nostrum
-      doloribus dolore ea a. Beatae, quaerat rem? Libero tenetur maiores
-      molestias voluptatum hic odit! Repellat cupiditate ea aliquid aperiam
-      laborum, quia dolorum pariatur et? Perspiciatis temporibus fugit culpa a
-      iusto veniam eos? Libero voluptas alias earum nemo, ipsam expedita quia
-      consequuntur suscipit quidem eligendi! Quo dolorem unde repudiandae id
-      voluptates sapiente non officiis ab officia, corporis voluptatum iure
-      aspernatur, maxime nostrum. Impedit officiis quo omnis optio quae corrupti
-      necessitatibus vero neque alias voluptates. Porro. Doloribus ipsum nam
-      eum, nesciunt possimus et facilis laboriosam officia necessitatibus neque,
-      pariatur laudantium, illum temporibus? Quam nobis provident aliquam ad
-      dolorum commodi, et rem repudiandae, voluptate porro error sint! Dolores
-      incidunt facilis quis temporibus pariatur aliquam distinctio totam
-      doloremque quaerat, vitae eum consequatur vero sed adipisci facere ut.
-      Nam, corporis? At cupiditate magni alias provident! Maxime quibusdam unde
-      quisquam! Totam consequuntur quaerat repellendus vitae nulla! Obcaecati
-      eius magnam nesciunt repellendus esse, aliquid accusamus odit velit
-      incidunt porro similique corporis voluptates minima molestiae! Alias,
-      molestias vel. Laboriosam nostrum tempore nemo.
-    </p>
+    <div id="music-container"></div>
   </body>
   <script src="./js/loading.js"></script>
+  <script src="./js/music.js"></script>
 </html>
