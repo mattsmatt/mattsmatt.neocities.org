@@ -28,7 +28,7 @@ iframe {
 
 .btn-active {
   transform: translateX(0px) !important;
-  cursor: none;
+  cursor: default !important;
 }
 
 .btn:hover {
