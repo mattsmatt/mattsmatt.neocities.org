@@ -52,12 +52,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        hyphens: auto;
         padding: 10px;
         box-sizing: border-box;
         position: absolute;
         font-size: 18px;
         transition: 0.25s ease-in-out;
         z-index: 15; /* Ensure tooltip is displayed above content */
+        word-wrap: break-word;
+      }
+
+      .tooltiptext div {
+        width: 100%;
       }
 
       .subheading {

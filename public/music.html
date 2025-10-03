@@ -38,6 +38,8 @@
         background-color: black;
         color: #ffffff;
         text-align: center;
+        word-wrap: break-word;
+        hyphens: auto;
         top: 50%;
         transform: translateY(-50%);
         font-family: "Helvetica", sans-serif;
@@ -52,6 +54,10 @@
         font-size: 18px;
         transition: 0.25s ease-in-out;
         z-index: 15; /* Ensure tooltip is displayed above content */
+      }
+
+      .tooltiptext div {
+        width: 100%;
       }
 
       .subheading {

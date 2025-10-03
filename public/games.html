@@ -47,6 +47,8 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+        word-wrap: break-word;
+        hyphens: auto;
         justify-content: center;
         align-items: center;
         padding: 10px;
@@ -55,6 +57,10 @@
         font-size: 18px;
         transition: 0.25s ease-in-out;
         z-index: 15; /* Ensure tooltip is displayed above content */
+      }
+
+      .tooltiptext div {
+        width: 100%;
       }
 
       .subheading {
