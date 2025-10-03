@@ -71,10 +71,12 @@ function changeFrame(destination, event) {
   const onFinishLoading = new Audio(
     "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onFinishLoading.mp3"
   );
+  onFinishLoading.volume = 0.5;
 
   const onClick = new Audio(
     "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onClick.mp3"
   );
+  onClick.volume = 0.5;
 
   onClick.play();
 

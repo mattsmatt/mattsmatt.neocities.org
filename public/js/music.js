@@ -78,7 +78,7 @@ const music = [
 
 music.forEach((item) => {
   const musicDiv = document.createElement("div");
-  musicDiv.className = "item";
+  musicDiv.className = "item tooltip";
 
   const album = document.createElement("div");
   album.textContent = item["album"];
@@ -86,6 +86,9 @@ music.forEach((item) => {
   const artist = document.createElement("div");
   artist.textContent = item["artist"];
   artist.className = "subheading";
+
+  const tooltipText = document.createElement("div");
+  tooltipText.className = "tooltiptext";
 
   fetch(
     `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=a5f09f2dd441c3f7f1e8f4f05e8ef663&artist=${item["artist"]}&album=${item["album"]}&format=json`
@@ -102,8 +105,9 @@ music.forEach((item) => {
       //   })
       // );
       musicDiv.appendChild(poster);
-      musicDiv.appendChild(album);
-      musicDiv.appendChild(artist);
+      tooltipText.appendChild(album);
+      tooltipText.appendChild(artist);
+      musicDiv.appendChild(tooltipText);
     })
     .catch((err) => console.error(err));
 

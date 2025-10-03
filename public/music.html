@@ -24,6 +24,45 @@
         aspect-ratio: 1 / 1;
         filter: drop-shadow(2px 2px 2px black);
       }
+
+      /* Tooltip container */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Tooltip text */
+      .tooltiptext {
+        opacity: 0; /* Hidden by default */
+        width: 100%;
+        background-color: black;
+        color: #ffffff;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: "Helvetica", sans-serif;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute;
+        font-size: 18px;
+        transition: 0.25s ease-in-out;
+        z-index: 15; /* Ensure tooltip is displayed above content */
+      }
+
+      .subheading {
+        font-size: 14px;
+        color: #cacaca;
+      }
+
+      /* Show the tooltip text on hover */
+      .tooltip:hover .tooltiptext {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>

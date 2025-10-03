@@ -11,6 +11,7 @@ function init() {
   hoverSound = new Audio(
     "https://github.com/mattsmatt/mattsmatt.neocities.org/raw/refs/heads/main/public/assets/audio/onClick.mp3"
   );
+  hoverSound.volume = 0.5;
 
   setTimeout(() => {
     // Add a class to hide the loader

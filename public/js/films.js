@@ -15,7 +15,10 @@ fetch(
   .then((res) => {
     res.results.forEach((item) => {
       const filmDiv = document.createElement("div");
-      filmDiv.className = "item";
+      filmDiv.className = "item tooltip";
+
+      const tooltipText = document.createElement("div");
+      tooltipText.className = "tooltiptext";
 
       const poster = document.createElement("img");
       poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
@@ -23,12 +26,14 @@ fetch(
 
       const title = document.createElement("div");
       title.textContent = item["title"];
-      filmDiv.appendChild(title);
+      tooltipText.appendChild(title);
 
       const year = document.createElement("div");
       year.textContent = `(${new Date(item["release_date"]).getFullYear()})`;
       year.className = "subheading";
-      filmDiv.appendChild(year);
+      tooltipText.appendChild(year);
+
+      filmDiv.appendChild(tooltipText);
 
       container = document.getElementById("films-container");
       container.appendChild(filmDiv);
@@ -44,7 +49,10 @@ fetch(
   .then((res) => {
     res.results.forEach((item) => {
       const tvDiv = document.createElement("div");
-      tvDiv.className = "item";
+      tvDiv.className = "item tooltip";
+
+      const tooltipText = document.createElement("div");
+      tooltipText.className = "tooltiptext";
 
       const poster = document.createElement("img");
       poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
@@ -52,12 +60,14 @@ fetch(
 
       const title = document.createElement("div");
       title.textContent = item["name"];
-      tvDiv.appendChild(title);
+      tooltipText.appendChild(title);
 
       const year = document.createElement("div");
       year.textContent = `(${new Date(item["first_air_date"]).getFullYear()})`;
       year.className = "subheading";
-      tvDiv.appendChild(year);
+      tooltipText.appendChild(year);
+
+      tvDiv.appendChild(tooltipText);
 
       container = document.getElementById("tv-container");
       container.appendChild(tvDiv);

@@ -58,7 +58,10 @@ const games = [
 
 games.forEach((item) => {
   const gameDiv = document.createElement("div");
-  gameDiv.className = "item";
+  gameDiv.className = "item tooltip";
+
+  const tooltipText = document.createElement("div");
+  tooltipText.className = "tooltiptext";
 
   const poster = document.createElement("img");
   poster.src = "./assets/images/library/games/" + item["image"];
@@ -66,12 +69,14 @@ games.forEach((item) => {
 
   const title = document.createElement("div");
   title.textContent = item["title"];
-  gameDiv.appendChild(title);
+  tooltipText.appendChild(title);
 
   const year = document.createElement("div");
   year.textContent = item["year"];
   year.className = "subheading";
-  gameDiv.appendChild(year);
+  tooltipText.appendChild(year);
+
+  gameDiv.appendChild(tooltipText);
 
   container = document.getElementById("games-container");
   container.appendChild(gameDiv);
