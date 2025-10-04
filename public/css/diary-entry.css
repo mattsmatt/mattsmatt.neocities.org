@@ -1,0 +1,8 @@
+html {
+  padding: 20px;
+  text-align: justify;
+  font-family: "Dudu Calligraphy", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  scrollbar-color: rgba(134, 134, 134, 0.5) transparent;
+}

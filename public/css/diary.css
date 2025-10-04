@@ -54,6 +54,7 @@ body {
   display: flex;
   align-items: center;
   padding: 25px 50px;
+  z-index: 15;
 }
 
 .diamond-container {
@@ -81,6 +82,7 @@ body {
   width: 75%;
   height: 100%;
   position: relative;
+  z-index: 15;
 }
 
 .spacer {
@@ -116,6 +118,24 @@ body {
   flex-direction: column;
 }
 
+.hover-underline {
+  position: relative; /* Crucial for positioning the pseudo-element */
+  display: inline-block;
+  text-decoration: none; /* Remove default underline */
+  padding-bottom: 5px; /* Add some space for the underline */
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  left: 0;
+  width: 0; /* Start with zero width */
+  height: 2px; /* Thickness of the line */
+  background: linear-gradient(to right, #1784fbff, rgb(91, 170, 255));
+  transition: width 0.3s ease-out; /* Animate width change */
+}
+
 .side-text-main {
   flex-direction: column;
   padding: 0 15px;
@@ -124,6 +144,14 @@ body {
   overflow: auto;
   gap: 15px;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.side-text-main div {
+  cursor: pointer;
+}
+
+.hover-underline:hover::after {
+  width: 100%; /* Expand to full width on hover */
 }
 
 .side-text {

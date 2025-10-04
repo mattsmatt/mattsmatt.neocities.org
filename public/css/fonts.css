@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "Dudu Calligraphy";
+  src: url("../assets/fonts/Dudu_Calligraphy.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Audio Nugget";
   src: url("../assets/fonts/AudioNugget.ttf") format("truetype");
 }
