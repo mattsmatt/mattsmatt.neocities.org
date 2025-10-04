@@ -74,6 +74,26 @@ const music = [
     artist: "Sade",
     image: "",
   },
+  {
+    album: "Lesser Matters",
+    artist: "The Radio Dept.",
+    image: "",
+  },
+  {
+    album: "Sunflower",
+    artist: "The Beach Boys",
+    image: "",
+  },
+  {
+    album: "Aja",
+    artist: "Steely Dan",
+    image: "",
+  },
+  {
+    album: "Ys",
+    artist: "Joanna Newsom",
+    image: "",
+  },
 ];
 
 music.forEach((item) => {
