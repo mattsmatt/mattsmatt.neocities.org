@@ -6,6 +6,7 @@ const images = [
   { id: 5, img: "resurrection.jpg" },
   { id: 6, img: "azumanga-daioh.jpg" },
   { id: 7, img: "hollow-knight.jpg" },
+  { id: 8, img: "chow-yun-fat-a-better-tomorrow.gif" },
 ];
 
 images.forEach((item) => {
