@@ -2,97 +2,77 @@ const music = [
   {
     album: "Since I Left You",
     artist: "The Avalanches",
-    image: "",
-  },
-  {
-    album: "Charmed",
-    artist: "DJ Sabrina The Teenage DJ",
-    image: "",
-  },
-  {
-    album: "Pet Sounds",
-    artist: "The Beach Boys",
-    image: "",
-  },
-  {
-    album: "ファンファーレ",
-    artist: "advantage Lucy",
-    image: "",
+    image: "since i left you.jpg",
   },
   {
     album: "Somewhere City",
     artist: "Origami Angel",
-    image: "",
+    image: "somewhere city.jpg",
   },
   {
     album: "Love/Hate",
     artist: "The-Dream",
-    image: "",
+    image: "love_hate.jpg",
   },
   {
     album: "Walking Wounded",
     artist: "Everything but the Girl",
-    image: "",
+    image: "walking wounded.jpg",
   },
   {
     album: "Blonde on Blonde",
     artist: "Bob Dylan",
-    image: "",
-  },
-  {
-    album: "Centralismo",
-    artist: "Sore",
-    image: "",
+    image: "blonde on blonde.jpg",
   },
   {
     album: "Voodoo",
     artist: "D'Angelo",
-    image: "",
+    image: "voodoo.png",
   },
   {
     album: "Loveless",
     artist: "My Bloody Valentine",
-    image: "",
+    image: "loveless.jpg",
   },
   {
     album: "Kaputt",
     artist: "Destroyer",
-    image: "",
+    image: "kaputt.jpg",
   },
   {
     album: "Introspective",
     artist: "Pet Shop Boys",
-    image: "",
+    image: "introspective.png",
   },
   {
     album: "Details",
     artist: "Frou Frou",
-    image: "",
+    image: "details.jpg",
   },
   {
     album: "Love Deluxe",
     artist: "Sade",
-    image: "",
+    image: "love deluxe.jpg",
   },
   {
     album: "Lesser Matters",
     artist: "The Radio Dept.",
-    image: "",
+    image: "Lesser Matters.jpg",
   },
   {
     album: "Sunflower",
     artist: "The Beach Boys",
-    image: "",
-  },
-  {
-    album: "Aja",
-    artist: "Steely Dan",
-    image: "",
+    image: "sunflower.png",
   },
   {
     album: "Ys",
     artist: "Joanna Newsom",
-    image: "",
+    image: "ys.jpg",
+  },
+  {
+    album: "The Lioness",
+    artist: "Songs: Ohia",
+    image: "The Lioness.jpg",
   },
 ];
 
@@ -110,26 +90,34 @@ music.forEach((item) => {
   const tooltipText = document.createElement("div");
   tooltipText.className = "tooltiptext";
 
-  fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=a5f09f2dd441c3f7f1e8f4f05e8ef663&artist=${item["artist"]}&album=${item["album"]}&format=json`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      const poster = document.createElement("img");
-      poster.src = res.album.image.filter((img) => {
-        return img.size == "extralarge";
-      })[0]["#text"];
-      // console.log(
-      //   res.album.image.filter((img) => {
-      //     return img.size == "extralarge";
-      //   })
-      // );
-      musicDiv.appendChild(poster);
-      tooltipText.appendChild(album);
-      tooltipText.appendChild(artist);
-      musicDiv.appendChild(tooltipText);
-    })
-    .catch((err) => console.error(err));
+  // fetch(
+  //   `http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=a5f09f2dd441c3f7f1e8f4f05e8ef663&artist=${item["artist"]}&album=${item["album"]}&format=json`
+  // )
+  //   .then((res) => res.json())
+  //   .then((res) => {
+  //     const poster = document.createElement("img");
+  //     poster.src = res.album.image.filter((img) => {
+  //       return img.size == "extralarge";
+  //     })[0]["#text"];
+  //     // console.log(
+  //     //   res.album.image.filter((img) => {
+  //     //     return img.size == "extralarge";
+  //     //   })
+  //     // );
+  //     musicDiv.appendChild(poster);
+  //     tooltipText.appendChild(album);
+  //     tooltipText.appendChild(artist);
+  //     musicDiv.appendChild(tooltipText);
+  //   })
+  //   .catch((err) => console.error(err));
+
+  const poster = document.createElement("img");
+  poster.src = "./assets/images/library/music/" + item["image"];
+
+  musicDiv.appendChild(poster);
+  tooltipText.appendChild(album);
+  tooltipText.appendChild(artist);
+  musicDiv.appendChild(tooltipText);
 
   container = document.getElementById("music-container");
   container.appendChild(musicDiv);
