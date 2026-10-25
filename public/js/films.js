@@ -1,78 +1,132 @@
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWE4ZTYxOTlmMTI2NTBiNTljZWM0YzFhMmYwNGI0YSIsIm5iZiI6MTc1MzMwMDE1NC45MjIsInN1YiI6IjY4ODEzY2JhYjk0ZTY2N2Y4YjUyOWRjMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XPnhGHiOnpv6fnRvg6oySE24kxZbWyq4WWyPXfqzYsY",
+// const options = {
+//   method: "GET",
+//   headers: {
+//     accept: "application/json",
+//     Authorization:
+//       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWE4ZTYxOTlmMTI2NTBiNTljZWM0YzFhMmYwNGI0YSIsIm5iZiI6MTc1MzMwMDE1NC45MjIsInN1YiI6IjY4ODEzY2JhYjk0ZTY2N2Y4YjUyOWRjMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XPnhGHiOnpv6fnRvg6oySE24kxZbWyq4WWyPXfqzYsY",
+//   },
+// };
+
+// fetch(
+//   "https://api.themoviedb.org/4/account/68813cbab94e667f8b529dc1/movie/favorites?page=1&language=en-US&sort_by=created_at.asc",
+//   options
+// )
+//   .then((res) => res.json())
+//   .then((res) => {
+//     res.results.forEach((item) => {
+//       const filmDiv = document.createElement("div");
+//       filmDiv.className = "item tooltip";
+
+//       const tooltipText = document.createElement("div");
+//       tooltipText.className = "tooltiptext";
+
+//       const poster = document.createElement("img");
+//       poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
+//       filmDiv.appendChild(poster);
+
+//       const title = document.createElement("div");
+//       title.textContent = item["title"];
+//       tooltipText.appendChild(title);
+
+//       const year = document.createElement("div");
+//       year.textContent = `(${new Date(item["release_date"]).getFullYear()})`;
+//       year.className = "subheading";
+//       tooltipText.appendChild(year);
+
+//       filmDiv.appendChild(tooltipText);
+
+//       container = document.getElementById("films-container");
+//       container.appendChild(filmDiv);
+//     });
+//   })
+//   .catch((err) => console.error(err));
+
+// fetch(
+//   "https://api.themoviedb.org/4/account/68813cbab94e667f8b529dc1/tv/favorites?page=1&language=en-US&sort_by=created_at.asc",
+//   options
+// )
+//   .then((res) => res.json())
+//   .then((res) => {
+//     res.results.forEach((item) => {
+//       const tvDiv = document.createElement("div");
+//       tvDiv.className = "item tooltip";
+
+//       const tooltipText = document.createElement("div");
+//       tooltipText.className = "tooltiptext";
+
+//       const poster = document.createElement("img");
+//       poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
+//       tvDiv.appendChild(poster);
+
+//       const title = document.createElement("div");
+//       title.textContent = item["name"];
+//       tooltipText.appendChild(title);
+
+//       const year = document.createElement("div");
+//       year.textContent = `(${new Date(item["first_air_date"]).getFullYear()})`;
+//       year.className = "subheading";
+//       tooltipText.appendChild(year);
+
+//       tvDiv.appendChild(tooltipText);
+
+//       container = document.getElementById("tv-container");
+//       container.appendChild(tvDiv);
+
+//       // console.log(item);
+//     });
+//   })
+//   .catch((err) => console.error(err));
+
+const music = [
+  {
+    title: "Johnny Guitar",
+    year: "1954",
+    image: "Johnny Guitar.jpg",
   },
-};
+  {
+    title: "In a Year with 13 Moons",
+    year: "1978",
+    image: "In a Year with 13 Moons.jpg",
+  },
+  {
+    title: "Synecdoche, New York",
+    year: "2008",
+    image: "Synecdoche New York.jpg",
+  },
+  {
+    title: "The Man Who Shot Liberty Valance",
+    year: "1962",
+    image: "The Man Who Shot Liberty Valance.jpg",
+  },
+  {
+    title: "A Brighter Summer Day",
+    year: "1991",
+    image: "A Brighter Summer Day.jpg",
+  },
+];
 
-fetch(
-  "https://api.themoviedb.org/4/account/68813cbab94e667f8b529dc1/movie/favorites?page=1&language=en-US&sort_by=created_at.asc",
-  options
-)
-  .then((res) => res.json())
-  .then((res) => {
-    res.results.forEach((item) => {
-      const filmDiv = document.createElement("div");
-      filmDiv.className = "item tooltip";
+music.forEach((item) => {
+  const filmDiv = document.createElement("div");
+  filmDiv.className = "item tooltip";
 
-      const tooltipText = document.createElement("div");
-      tooltipText.className = "tooltiptext";
+  const tooltipText = document.createElement("div");
+  tooltipText.className = "tooltiptext";
 
-      const poster = document.createElement("img");
-      poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
-      filmDiv.appendChild(poster);
+  const poster = document.createElement("img");
+  poster.src = "./assets/images/library/films/" + item["image"];
+  filmDiv.appendChild(poster);
 
-      const title = document.createElement("div");
-      title.textContent = item["title"];
-      tooltipText.appendChild(title);
+  const title = document.createElement("div");
+  title.textContent = item["title"];
+  tooltipText.appendChild(title);
 
-      const year = document.createElement("div");
-      year.textContent = `(${new Date(item["release_date"]).getFullYear()})`;
-      year.className = "subheading";
-      tooltipText.appendChild(year);
+  const year = document.createElement("div");
+  year.textContent = item["year"];
+  year.className = "subheading";
+  tooltipText.appendChild(year);
 
-      filmDiv.appendChild(tooltipText);
+  filmDiv.appendChild(tooltipText);
 
-      container = document.getElementById("films-container");
-      container.appendChild(filmDiv);
-    });
-  })
-  .catch((err) => console.error(err));
-
-fetch(
-  "https://api.themoviedb.org/4/account/68813cbab94e667f8b529dc1/tv/favorites?page=1&language=en-US&sort_by=created_at.asc",
-  options
-)
-  .then((res) => res.json())
-  .then((res) => {
-    res.results.forEach((item) => {
-      const tvDiv = document.createElement("div");
-      tvDiv.className = "item tooltip";
-
-      const tooltipText = document.createElement("div");
-      tooltipText.className = "tooltiptext";
-
-      const poster = document.createElement("img");
-      poster.src = "https://image.tmdb.org/t/p/w1280/" + item["poster_path"];
-      tvDiv.appendChild(poster);
-
-      const title = document.createElement("div");
-      title.textContent = item["name"];
-      tooltipText.appendChild(title);
-
-      const year = document.createElement("div");
-      year.textContent = `(${new Date(item["first_air_date"]).getFullYear()})`;
-      year.className = "subheading";
-      tooltipText.appendChild(year);
-
-      tvDiv.appendChild(tooltipText);
-
-      container = document.getElementById("tv-container");
-      container.appendChild(tvDiv);
-
-      // console.log(item);
-    });
-  })
-  .catch((err) => console.error(err));
+  container = document.getElementById("films-container");
+  container.appendChild(filmDiv);
+});
